@@ -2,7 +2,7 @@ defmodule Blitzy do
   use Application
 
   def start(_type, _args) do
-    Supervisor.start_link([], strategy: :one_for_one)
+    Blitzy.Supervisor.start_link(:ok)
   end
 
   def run(n_workers, url) when n_workers > 0 do
